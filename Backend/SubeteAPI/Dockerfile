@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 # Copiá los archivos del proyecto
-COPY . ./
+COPY Backend/SubeteAPI/ ./
 
 # Restaurá los paquetes y compilá
 RUN dotnet restore
@@ -17,3 +17,4 @@ COPY --from=build /app/out .
 # Expone el puerto
 EXPOSE 80
 ENTRYPOINT ["dotnet", "SubeteAPI.dll"]
+
