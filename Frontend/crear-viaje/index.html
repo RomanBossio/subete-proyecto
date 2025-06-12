@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Viaje - Súbete</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <form id="viajeForm">
+        <h1>Crear nuevo viaje</h1>
+
+        <label for="origen">Origen:</label>
+        <input type="text" id="origen" name="origen" required>
+
+        <label for="destino">Destino:</label>
+        <input type="text" id="destino" name="destino" required>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required>
+
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" step="0.01" required>
+
+        <label for="lugares">Cantidad de lugares:</label>
+        <input type="number" id="lugares" name="lugares" required>
+
+        <label for="detalles">Detalles adicionales:</label>
+        <textarea id="detalles" name="detalles" placeholder="Información extra sobre el viaje (paradas, equipaje, etc.)"></textarea>
+
+        <label class="checkbox-input">
+            <input type="checkbox" id="permiteEncomiendas" name="permiteEncomiendas">
+            ¿Permite encomiendas?
+        </label>        
+        
+        <button type="submit">Crear viaje</button>
+
+        <div class="links">
+            <a href="../login/index.html">Volver al inicio</a>
+        </div>
+    </form>
+
+    <p id="message"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
