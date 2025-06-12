@@ -1,74 +1,445 @@
-/* Reset básico */
-* {
+/* =====================
+   1. Reset y variables
+   ===================== */
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
-
-body {
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  :root {
+    --header-height: 72px;
+    --hero-gradient-start: #e8f9f7;
+    --hero-gradient-end: #ffffff;
+    --primary: #00b894;
+    --primary-dark: #019374;
+    --text-dark: #2c3e50;
+    --text-muted: #444;
+  }
+  
+  /* =====================
+     2. Layout global
+     ===================== */
+  body {
     background-color: #f4f4f4;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  
+  /* =====================
+     3. Header
+     ===================== */
+  .header {
+    height: var(--header-height);
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 184, 148, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+    border-radius: 0 0 12px 12px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+  }
+  .logo img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .usuario {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .usuario img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .usuario span {
+    font-weight: bold;
+    color: white;
+  }
+  .usuario button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    padding: 0.4rem 0.7rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+  }
+  .usuario button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* =====================
+     4. Hero fullscreen
+     ===================== */
+  .hero.fullscreen {
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .hero-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 4%;
+  }
+  
+  /* 4.1 Contenido de texto */
+  .hero-contenido {
+    max-width: 500px;
+    color: var(--text-dark);
+    text-align: left;
+  }
+  .hero-contenido h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    /* gradiente en texto */
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-contenido p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    color: var(--text-muted);
+  }
+  
+  /* 4.2 Botones del hero */
+  .hero-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .hero-botones button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.4rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .hero-botones button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 4.3 Imagen del hero */
+  .hero-imagen {
     display: flex;
     justify-content: center;
-}
-
-.container {
+  }
+  .hero-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  /* =====================
+     5. Main / Buscador
+     ===================== */
+  main {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     background-color: #fff;
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-h1 {
+    margin: 5rem auto 2rem; /* sube un poco hacia el hero */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  main h1 {
     margin-bottom: 1.5rem;
     text-align: center;
-    color: #2c3e50;
-}
-
-form {
+    color: var(--text-dark);
+  }
+  
+  form {
     display: grid;
     gap: 1rem;
     margin-bottom: 2rem;
-}
-
-input[type="text"],
-input[type="date"] {
+  }
+  input[type="text"],
+  input[type="date"] {
     padding: 0.75rem;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1rem;
-}
-
-button {
-    background-color: #00b894;
+  }
+  main button[type="submit"] {
+    background-color: var(--primary);
     color: #fff;
     padding: 0.75rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-}
-
-button:hover {
-    background-color: #019374;
-}
-
-#resultados .viaje {
-    background-color: #ecf0f1;
-    padding: 1rem;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-#resultados .viaje h3 {
-    color: #2c3e50;
+    transition: background-color 0.2s ease;
+  }
+  main button[type="submit"]:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  /* =====================
+     6. Resultados / Tarjetas
+     ===================== */
+  #resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .card-viaje {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  .card-viaje .ruta {
+    font-size: 1.3rem;
+    color: var(--text-dark);
     margin-bottom: 0.5rem;
+  }
+  .card-viaje .fecha-hora {
+    color: #555;
+    margin-bottom: 1rem;
+  }
+  .card-viaje .detalles p {
+    margin: 0.25rem 0;
+    font-size: 0.95rem;
+  }
+  .btn-solicitar {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background-color: #0984e3;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+  }
+  .btn-solicitar:hover {
+    background-color: #065fc4;
+  }
+  
+  /* =====================
+     7. Misc / Dropdown
+     ===================== */
+  .perfil-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  .perfil-header img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    transition: transform 0.2s ease;
+  }
+  .perfil-header:hover img {
+    transform: scale(1.05);
+  }
+  .perfil-header span {
+    color: white;
+    font-weight: bold;
+  }
+  .menu-desplegable {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: rgba(44, 62, 80, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    padding: 0.75rem 1rem;
+    min-width: 160px;
+    display: none;
+    flex-direction: column;
+    z-index: 1001;
+  }
+  .menu-desplegable.visible {
+    display: flex;
+  }
+  .menu-desplegable a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: background-color 0.2s ease, padding-left 0.2s ease;
+    border-radius: 6px;
+  }
+  .menu-desplegable a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding-left: 0.5rem;
+  }
+  /* ====== Búsqueda simplificada ====== */
+.search-card-simple {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;                /* deja espacio tras el hero */
+    padding: 1.5rem 2rem;
+    background: #fff;                 /* blanco puro */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  
+  .search-card-simple .fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .search-card-simple .field-group {
+    position: relative;
+  }
+  
+  .search-card-simple .icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+  }
+  
+  .search-card-simple input {
+    width: 100%;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  .search-card-simple input:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+  
+  .search-card-simple .actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .search-card-simple .btn {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  /* Buscar */
+  .search-card-simple .btn-primary {
+    background: var(--primary);
+    border: none;
+    color: #fff;
+  }
+  .search-card-simple .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  /* Publicar */
+  .search-card-simple .btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+  .search-card-simple .btn-outline:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  /* ================
+   8. Footer
+   ================ */
+.footer {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+  margin-top: 2rem;
 }
 
-#resultados .viaje p {
-    margin-bottom: 0.3rem;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 4%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-copy {
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }

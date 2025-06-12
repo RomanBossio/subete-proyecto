@@ -1,3 +1,4 @@
+// 🧭 Evento de búsqueda
 document.getElementById('busquedaForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -23,6 +24,7 @@ document.getElementById('busquedaForm').addEventListener('submit', async (e) => 
     }
 });
 
+// 🎯 Mostrar resultados de búsqueda
 function mostrarResultados(viajes) {
     const contenedor = document.getElementById('resultados');
     contenedor.innerHTML = "";
@@ -34,15 +36,68 @@ function mostrarResultados(viajes) {
 
     viajes.forEach(viaje => {
         const viajeDiv = document.createElement('div');
-        viajeDiv.classList.add('viaje');
+        viajeDiv.classList.add('card-viaje');
+
+        const fechaHora = viaje.fecha_Hora_Salida.replace("T", " ").slice(0, 16);
 
         viajeDiv.innerHTML = `
-            <h3>${viaje.origen} → ${viaje.destino}</h3>
-            <p><strong>Fecha y hora:</strong> ${viaje.fecha_Hora_Salida.replace("T", " ")}</p>
-            <p><strong>Precio:</strong> $${viaje.precio}</p>
-            <p><strong>Lugares disponibles:</strong> ${viaje.lugares_Disponibles}</p>
+            <div class="ruta">${viaje.origen} → ${viaje.destino}</div>
+            <div class="fecha-hora">🕒 ${fechaHora}</div>
+            <div class="detalles">
+                <p><strong>Precio:</strong> $${viaje.precio}</p>
+                <p><strong>Lugares disponibles:</strong> ${viaje.lugares_Disponibles}</p>
+                <p><strong>Permite encomiendas:</strong> ${viaje.permite_Encomiendas ? "Sí" : "No"}</p>
+            </div>
+            <button class="btn-solicitar">Solicitar</button>
         `;
 
         contenedor.appendChild(viajeDiv);
     });
+}
+
+// 👤 Usuario simulado (más adelante se reemplaza por sesión real)
+const usuarioLogueado = {
+    nombre: "Juan",
+    apellido: "Pérez"
+};
+
+// 👋 Mostrar usuario en el header con menú desplegable
+document.addEventListener("DOMContentLoaded", () => {
+    const usuarioInfo = document.getElementById("usuarioInfo");
+
+    if (usuarioLogueado && usuarioInfo) {
+        usuarioInfo.innerHTML = `
+            <div class="perfil-header" onclick="toggleMenu()">
+                <img src="images/user.jpg" alt="Perfil">
+                <span>${usuarioLogueado.nombre}</span>
+                <div class="menu-desplegable" id="menuDesplegable">
+                    <a href="#">Mis viajes</a>
+                    <a href="#">Mi perfil</a>
+                    <a href="#" onclick="cerrarSesion()">Cerrar sesión</a>
+                </div>
+            </div>
+        `;
+    }
+});
+
+// 📂 Mostrar/Ocultar menú
+function toggleMenu() {
+    const menu = document.getElementById("menuDesplegable");
+    if (menu) menu.classList.toggle("visible");
+}
+
+// 🔐 Cerrar sesión (simulado)
+function cerrarSesion() {
+    alert("Sesión cerrada (simulado)");
+    window.location.href = "../login/index.html";
+}
+// 📌 Al hacer click en el botón del hero, scrollea suave al form de búsqueda
+const heroBtn = document.getElementById('heroSearchBtn');
+const form = document.getElementById('busquedaForm');
+
+if (heroBtn && form) {
+  heroBtn.addEventListener('click', e => {
+    e.preventDefault();
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 }
