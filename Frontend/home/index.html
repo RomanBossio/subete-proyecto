@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio - Súbete</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <main>
+        <h1>Buscar un viaje</h1>
+
+        <form id="busquedaForm">
+            <label for="origen">Origen:</label>
+            <input type="text" id="origen" name="origen" placeholder="Ej. Rosario" required>
+
+            <label for="destino">Destino:</label>
+            <input type="text" id="destino" name="destino" placeholder="Ej. Córdoba" required>
+
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <button type="submit">Buscar</button>
+        </form>
+
+        <section id="resultados">
+            <!-- Aquí aparecerán los viajes encontrados -->
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
