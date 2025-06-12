@@ -1,0 +1,128 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  h1 {
+    margin: 1rem 0; /* margen superior e inferior */
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Checkbox de “Mostrar contraseñas” alineado horizontalmente */
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-weight: normal;
+    color: #555;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 0.5rem;
+  }
+  
+  .checkbox-container .inline-label {
+    margin-left: 0.5rem;
+    font-weight: normal;
+    color: #555;
+  }
+  
+  /* Checkbox de “¿Querés ser conductor?” con estilo igual a los labels principales */
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .checkbox-label input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 0.5rem;
+  }
+  
+  /* Estilo para el botón */
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: #00b894; /* verde suave */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #019374; /* tono un poco más oscuro */
+  }
+  
+  /* Mensaje de error o éxito */
+  p#message {
+    margin-top: 1rem;
+    text-align: center;
+    color: red;
+  }
+  
+  a {
+    color: #00b894;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Enlaces (p.ej: "¿Ya tenés cuenta? Iniciar sesión") */
+  .links {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  
+  .links a {
+    margin: 0 0.5rem;
+    display: inline-block;
+  }
+  
