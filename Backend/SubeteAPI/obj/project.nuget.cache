@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u9824+RavyU=",
+  "dgSpecHash": "mv5/8u/G5bo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\bossi\\SubeteAPI\\SubeteAPI.csproj",
+  "projectFilePath": "C:\\Users\\bossi\\subete-proyecto\\Backend\\SubeteAPI\\SubeteAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bossi\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\bossi\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

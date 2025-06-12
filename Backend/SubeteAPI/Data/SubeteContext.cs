@@ -6,6 +6,7 @@ public class SubeteContext : DbContext
     public SubeteContext(DbContextOptions<SubeteContext> options) : base(options) { }
 
     public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<Viaje> Viajes { get; set; }
 
     // Podés agregar más DbSets para las otras tablas si querés.
 }

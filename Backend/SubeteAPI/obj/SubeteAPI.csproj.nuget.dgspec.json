@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bossi\\SubeteAPI\\SubeteAPI.csproj": {}
+    "C:\\Users\\bossi\\subete-proyecto\\Backend\\SubeteAPI\\SubeteAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bossi\\SubeteAPI\\SubeteAPI.csproj": {
+    "C:\\Users\\bossi\\subete-proyecto\\Backend\\SubeteAPI\\SubeteAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bossi\\SubeteAPI\\SubeteAPI.csproj",
+        "projectUniqueName": "C:\\Users\\bossi\\subete-proyecto\\Backend\\SubeteAPI\\SubeteAPI.csproj",
         "projectName": "SubeteAPI",
-        "projectPath": "C:\\Users\\bossi\\SubeteAPI\\SubeteAPI.csproj",
+        "projectPath": "C:\\Users\\bossi\\subete-proyecto\\Backend\\SubeteAPI\\SubeteAPI.csproj",
         "packagesPath": "C:\\Users\\bossi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bossi\\SubeteAPI\\obj\\",
+        "outputPath": "C:\\Users\\bossi\\subete-proyecto\\Backend\\SubeteAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bossi\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -75,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.410/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.411/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
