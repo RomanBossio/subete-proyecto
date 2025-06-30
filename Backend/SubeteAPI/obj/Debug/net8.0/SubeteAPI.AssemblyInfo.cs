@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SubeteAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c717099a616377781fbb16195e21de72d025b445")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6036ebad69121fc191786001dc56b3515ff7004")]
 [assembly: System.Reflection.AssemblyProductAttribute("SubeteAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SubeteAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

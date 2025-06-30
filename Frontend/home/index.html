@@ -4,31 +4,25 @@
   <meta charset="UTF-8">
   <title>Inicio - Súbete</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 </head>
 <body>
-
-  <!-- HEADER MODERNO -->
   <header class="header">
     <div class="logo" onclick="window.location.href='index.html'">
       <img src="images/favicon.png" alt="Logo Súbete">
       <span class="titulo-app">Súbete</span>
     </div>
-    <div class="usuario" id="usuarioInfo">
-      <!-- El JS completará este bloque con la foto, nombre y menú -->
-    </div>
+    <div class="usuario" id="usuarioInfo"></div>
   </header>
 
-  <!-- HERO / Sección de bienvenida fullscreen -->
   <section class="hero fullscreen">
     <div class="hero-inner">
       <div class="hero-contenido">
         <h1>Compartí tu viaje,<br>ayudá al planeta 🌱</h1>
         <p>Al compartir tu auto, reducís emisiones, ahorrás dinero y conocés gente con tus mismos destinos.</p>
-<div class="hero-botones">
-  <button id="heroSearchBtn">Buscar viajes</button>
-  <button onclick="window.location.href='../registro-viaje/index.html'">Publicar viaje</button>
-</div>
+        <div class="hero-botones">
+          <button id="heroSearchBtn">Buscar viajes</button>
+          <button onclick="window.location.href='../crear-viaje/index.html'">Publicar viaje</button>
+        </div>
       </div>
       <div class="hero-imagen">
         <img src="images/Carpool-rafiki.svg" alt="Viajar y cuidar el planeta">
@@ -37,38 +31,31 @@
   </section>
 
   <main>
-    <!-- Tarjeta de búsqueda refinada -->
     <div class="search-card-simple">
       <form id="busquedaForm">
         <div class="fields">
           <div class="field-group">
             <span class="icon">📍</span>
-            <input type="text" id="origen" name="origen" placeholder="¿Desde dónde?" required>
+            <input type="text" id="origen" placeholder="¿Desde dónde?" required>
           </div>
           <div class="field-group">
             <span class="icon">📍</span>
-            <input type="text" id="destino" name="destino" placeholder="¿A dónde?" required>
+            <input type="text" id="destino" placeholder="¿A dónde?" required>
           </div>
           <div class="field-group">
             <span class="icon">📅</span>
-            <input type="date" id="fecha" name="fecha" required>
+            <input type="date" id="fecha" required>
           </div>
         </div>
-  
         <div class="actions">
           <button type="submit" class="btn btn-primary">Buscar viaje</button>
-          <a href="../registro-viaje/index.html" class="btn btn-outline">Publicar viaje</a>
+          <a href="../crear-viaje/index.html" class="btn btn-outline">Publicar viaje</a>
         </div>
       </form>
     </div>
-  
-    <!-- Resultados -->
     <section id="resultados" class="tarjetas-viajes"></section>
   </main>
-  
-  
 
-  <!-- TEMPLATE DE VIAJES -->
   <template id="template-viaje">
     <div class="card-viaje">
       <div class="info-principal">
@@ -84,7 +71,6 @@
     </div>
   </template>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-links">
@@ -92,11 +78,10 @@
         <a href="#">Términos y condiciones</a>
         <a href="#">Contacto</a>
       </div>
-      <div class="footer-copy">
-        © 2025 Súbete. Todos los derechos reservados.
-      </div>
+      <div class="footer-copy">© 2025 Súbete. Todos los derechos reservados.</div>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
